@@ -59,8 +59,10 @@ const Chat = () => {
       });
 
       const data = await response.json();
-      console.log('Resposta do N8n:', data);
-      const botResponse = data.resposta || data.response || data.message || 'Desculpe, não consegui processar sua pergunta. Tente novamente.';
+      console.log('Resposta completa do N8n:', data);
+      
+      // Usar apenas a resposta real do webhook, sem fallbacks
+      const botResponse = data.resposta || data.response || data.output || data.message;
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
