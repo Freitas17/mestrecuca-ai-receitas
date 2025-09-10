@@ -73,13 +73,7 @@ const Chat = () => {
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error('Erro ao enviar para N8n:', error);
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: 'Ops! Houve um problema na conexão. Tente novamente em alguns instantes.',
-        isUser: false,
-        timestamp: new Date(),
-      };
-      setMessages(prev => [...prev, errorMessage]);
+      // Não mostrar mensagem de erro, apenas falhar silenciosamente
     } finally {
       setIsTyping(false);
     }
