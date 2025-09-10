@@ -59,7 +59,8 @@ const Chat = () => {
       });
 
       const data = await response.json();
-      const botResponse = data.resposta || data.message || 'Desculpe, não consegui processar sua pergunta. Tente novamente.';
+      console.log('Resposta do N8n:', data);
+      const botResponse = data.resposta || data.response || data.message || 'Desculpe, não consegui processar sua pergunta. Tente novamente.';
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
