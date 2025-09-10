@@ -47,7 +47,7 @@ const Chat = () => {
     setIsTyping(true);
 
     try {
-      const response = await fetch('https://andre17.app.n8n.cloud/webhook-test/PerguntaDoSistema', {
+      const response = await fetch('https://andre17.app.n8n.cloud/webhook/PerguntaDoSistema', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
