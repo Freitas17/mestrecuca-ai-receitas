@@ -13,12 +13,30 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        // Cores da marca MestreCuca
+        brand: {
+          orange: "hsl(var(--brand-orange))",
+          yellow: "hsl(var(--brand-yellow))",
+          'orange-light': "hsl(var(--brand-orange-light))",
+          'orange-dark': "hsl(var(--brand-orange-dark))",
+        },
+        
+        // Chat específico
+        chat: {
+          background: "hsl(var(--chat-background))",
+          user: "hsl(var(--chat-user))",
+          bot: "hsl(var(--chat-bot))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* MestreCuca AI Design System - Cores em HSL */
 
 @layer base {
   :root {
+    /* Cores principais do MestreCuca */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0 0% 20%;
+    
+    /* Identidade da marca */
+    --brand-orange: 24 100% 50%;      /* #FF6B00 - Laranja vibrante principal */
+    --brand-yellow: 45 100% 51%;      /* #FFC107 - Amarelo suave secundário */
+    --brand-orange-light: 24 100% 75%; /* Laranja mais claro */
+    --brand-orange-dark: 24 100% 35%;  /* Laranja mais escuro */
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -17,24 +24,42 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Cores do sistema baseadas na marca */
+    --primary: 24 100% 50%;           /* Laranja principal */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 0 0% 97%;            /* Fundo suave */
+    --secondary-foreground: 0 0% 20%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 45 100% 51%;            /* Amarelo de destaque */
+    --accent-foreground: 0 0% 20%;
+    
+    /* Gradientes da marca */
+    --gradient-brand: linear-gradient(135deg, hsl(var(--brand-orange)), hsl(var(--brand-yellow)));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
+    --ring: 24 100% 50%;
+    
+    /* Cores específicas do MestreCuca */
+    --chat-background: 0 0% 100%;
+    --chat-user: 24 100% 50%;
+    --chat-bot: 0 0% 96%;
+    --hero-gradient: var(--gradient-brand);
+    
+    /* Sombras elegantes */
+    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-brand: 0 10px 30px -10px hsl(var(--brand-orange) / 0.3);
+    
+    /* Animações */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --radius: 0.5rem;
 
@@ -100,6 +125,36 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
+  }
+}
+
+/* Componentes customizados do MestreCuca */
+@layer components {
+  .hero-gradient {
+    background: var(--hero-gradient);
+  }
+  
+  .shadow-brand {
+    box-shadow: var(--shadow-brand);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  /* Chat específico */
+  .chat-message {
+    @apply transition-smooth;
+  }
+  
+  .chat-user {
+    background: hsl(var(--chat-user));
+    @apply text-white;
+  }
+  
+  .chat-bot {
+    background: hsl(var(--chat-bot));
+    @apply text-foreground;
   }
 }
