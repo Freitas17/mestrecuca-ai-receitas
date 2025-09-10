@@ -31,7 +31,7 @@ const Chat = () => {
     scrollToBottom();
   }, [messages]);
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
 
     const userMessage: Message = {
@@ -41,13 +41,26 @@ const Chat = () => {
       timestamp: new Date(),
     };
 
+    const currentMessage = inputMessage;
     setMessages(prev => [...prev, userMessage]);
     setInputMessage('');
     setIsTyping(true);
 
-    // Simular resposta do bot
-    setTimeout(() => {
-      const botResponse = generateBotResponse(inputMessage);
+    try {
+      const response = await fetch('https://andre17.app.n8n.cloud/webhook-test/PerguntaDoSistema', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          pergunta: currentMessage,
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      const data = await response.json();
+      const botResponse = data.resposta || data.message || 'Desculpe, não consegui processar sua pergunta. Tente novamente.';
+
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: botResponse,
@@ -55,8 +68,18 @@ const Chat = () => {
         timestamp: new Date(),
       };
       setMessages(prev => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Erro ao enviar para N8n:', error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: 'Ops! Houve um problema na conexão. Tente novamente em alguns instantes.',
+        isUser: false,
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1500);
+    }
   };
 
   const generateBotResponse = (userInput: string): string => {
