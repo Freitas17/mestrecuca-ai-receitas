@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChefHat, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const scrollToSection = (id: string) => {
@@ -9,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -18,8 +19,8 @@ const Header = () => {
               <ChefHat className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-xl text-gray-900">MestreCuca</h1>
-              <p className="text-xs text-gray-600">AI</p>
+              <h1 className="font-bold text-xl text-foreground">MestreCuca</h1>
+              <p className="text-xs text-muted-foreground">AI</p>
             </div>
           </div>
 
@@ -27,28 +28,31 @@ const Header = () => {
           <nav className="hidden md:flex items-center gap-8">
             <button 
               onClick={() => scrollToSection('inicio')}
-              className="text-gray-700 hover:text-brand-orange transition-smooth font-medium"
+              className="text-foreground hover:text-primary transition-smooth font-medium"
             >
               Início
             </button>
             <button 
               onClick={() => scrollToSection('sobre')}
-              className="text-gray-700 hover:text-brand-orange transition-smooth font-medium"
+              className="text-foreground hover:text-primary transition-smooth font-medium"
             >
               Sobre
             </button>
             <button 
               onClick={() => scrollToSection('contato')}
-              className="text-gray-700 hover:text-brand-orange transition-smooth font-medium"
+              className="text-foreground hover:text-primary transition-smooth font-medium"
             >
               Contato
             </button>
           </nav>
 
-          {/* Mobile Menu Button */}
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <Menu className="w-5 h-5" />
-          </Button>
+          {/* Theme Toggle and Mobile Menu */}
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Button variant="ghost" size="icon" className="md:hidden">
+              <Menu className="w-5 h-5" />
+            </Button>
+          </div>
         </div>
       </div>
     </header>

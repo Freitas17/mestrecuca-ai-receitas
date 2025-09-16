@@ -14,14 +14,14 @@ const Hero = () => {
           {/* Conteúdo Principal */}
           <div className="text-center lg:text-left">
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
               Sua receita perfeita,{' '}
               <span className="hero-gradient bg-clip-text text-transparent">
                 a um chat de distância
               </span>
             </h1>
             
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               A receita perfeita com os ingredientes que você já tem em casa. 
               Conte para o MestreCuca o que você tem na cozinha e receba receitas 
               personalizadas em segundos!
@@ -52,15 +52,15 @@ const Hero = () => {
             <div className="flex flex-wrap gap-8 justify-center lg:justify-start text-center">
               <div>
                 <div className="text-2xl font-bold text-brand-orange">10k+</div>
-                <div className="text-sm text-gray-600">Receitas criadas</div>
+                <div className="text-sm text-muted-foreground">Receitas criadas</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-brand-orange">5min</div>
-                <div className="text-sm text-gray-600">Tempo médio</div>
+                <div className="text-sm text-muted-foreground">Tempo médio</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-brand-orange">98%</div>
-                <div className="text-sm text-gray-600">Satisfação</div>
+                <div className="text-sm text-muted-foreground">Satisfação</div>
               </div>
             </div>
           </div>

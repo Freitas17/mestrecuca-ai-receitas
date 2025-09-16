@@ -26,17 +26,17 @@ const About = () => {
   ];
 
   return (
-    <section id="sobre" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="sobre" className="py-20 bg-gradient-to-b from-background to-secondary">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
             Como funciona o{' '}
             <span className="hero-gradient bg-clip-text text-transparent">
               MestreCuca AI?
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Nossa inteligência artificial transforma os ingredientes que você tem 
             em casa em receitas deliciosas e personalizadas.
           </p>
@@ -47,15 +47,15 @@ const About = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="text-center p-6 bg-white rounded-xl shadow-soft hover:shadow-brand transition-smooth group"
+              className="text-center p-6 bg-card rounded-xl shadow-soft hover:shadow-brand transition-smooth group"
             >
               <div className="hero-gradient w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-4 text-white group-hover:scale-110 transition-smooth">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              <h3 className="text-xl font-semibold text-card-foreground mb-3">
                 {feature.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -63,8 +63,8 @@ const About = () => {
         </div>
 
         {/* Process Steps */}
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-soft">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+        <div className="bg-card rounded-2xl p-8 md:p-12 shadow-soft">
+          <h3 className="text-2xl font-bold text-center text-card-foreground mb-8">
             É simples assim:
           </h3>
           
@@ -73,10 +73,10 @@ const About = () => {
               <div className="w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                 1
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              <h4 className="text-lg font-semibold text-card-foreground mb-2">
                 Liste seus ingredientes
               </h4>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Conte para o MestreCuca quais ingredientes você tem disponível
               </p>
             </div>
@@ -85,10 +85,10 @@ const About = () => {
               <div className="w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                 2
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              <h4 className="text-lg font-semibold text-card-foreground mb-2">
                 Defina suas preferências
               </h4>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Tempo disponível, restrições alimentares e tipo de refeição
               </p>
             </div>
@@ -97,10 +97,10 @@ const About = () => {
               <div className="w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
                 3
               </div>
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+              <h4 className="text-lg font-semibold text-card-foreground mb-2">
                 Receba sua receita
               </h4>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Uma receita completa e personalizada em segundos
               </p>
             </div>

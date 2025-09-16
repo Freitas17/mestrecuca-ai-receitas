@@ -39,18 +39,18 @@ const Contact = () => {
   };
 
   return (
-    <section id="contato" className="py-20 bg-white">
+    <section id="contato" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Entre em{' '}
               <span className="hero-gradient bg-clip-text text-transparent">
                 Contato
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Tem alguma sugestão, dúvida ou feedback sobre o MestreCuca? 
               Adoraríamos ouvir você!
             </p>
@@ -59,7 +59,7 @@ const Contact = () => {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Informações de Contato */}
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">
+              <h3 className="text-2xl font-semibold text-foreground mb-6">
                 Fale conosco
               </h3>
               
@@ -69,9 +69,9 @@ const Contact = () => {
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                    <p className="text-gray-600">contato@mestrecuca.ai</p>
-                    <p className="text-sm text-gray-500">Respondemos em até 24h</p>
+                    <h4 className="font-semibold text-foreground mb-1">Email</h4>
+                    <p className="text-muted-foreground">contato@mestrecuca.ai</p>
+                    <p className="text-sm text-muted-foreground/70">Respondemos em até 24h</p>
                   </div>
                 </div>
                 
@@ -80,30 +80,30 @@ const Contact = () => {
                     <MessageSquare className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-1">Feedback</h4>
-                    <p className="text-gray-600">Compartilhe suas experiências</p>
-                    <p className="text-sm text-gray-500">Sua opinião nos ajuda a melhorar</p>
+                    <h4 className="font-semibold text-foreground mb-1">Feedback</h4>
+                    <p className="text-muted-foreground">Compartilhe suas experiências</p>
+                    <p className="text-sm text-muted-foreground/70">Sua opinião nos ajuda a melhorar</p>
                   </div>
                 </div>
               </div>
 
               {/* FAQ Quick Links */}
-              <div className="mt-8 p-6 bg-gray-50 rounded-xl">
-                <h4 className="font-semibold text-gray-900 mb-4">Perguntas Frequentes</h4>
+              <div className="mt-8 p-6 bg-secondary rounded-xl">
+                <h4 className="font-semibold text-secondary-foreground mb-4">Perguntas Frequentes</h4>
                 <div className="space-y-2 text-sm">
-                  <div className="text-gray-600">• Como o MestreCuca cria as receitas?</div>
-                  <div className="text-gray-600">• Posso sugerir melhorias nas receitas?</div>
-                  <div className="text-gray-600">• O serviço é gratuito?</div>
-                  <div className="text-gray-600">• Como reportar um problema?</div>
+                  <div className="text-muted-foreground">• Como o MestreCuca cria as receitas?</div>
+                  <div className="text-muted-foreground">• Posso sugerir melhorias nas receitas?</div>
+                  <div className="text-muted-foreground">• O serviço é gratuito?</div>
+                  <div className="text-muted-foreground">• Como reportar um problema?</div>
                 </div>
               </div>
             </div>
 
             {/* Formulário */}
-            <div className="bg-white p-8 rounded-xl shadow-brand border border-gray-100">
+            <div className="bg-card p-8 rounded-xl shadow-brand border border-border">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-card-foreground mb-2">
                     Nome
                   </label>
                   <Input
@@ -118,7 +118,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-card-foreground mb-2">
                     Email
                   </label>
                   <Input
@@ -133,7 +133,7 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="message" className="block text-sm font-medium text-card-foreground mb-2">
                     Mensagem
                   </label>
                   <Textarea

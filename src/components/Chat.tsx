@@ -128,7 +128,7 @@ Quer outra receita ou alguma variação?`;
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto bg-white rounded-lg shadow-brand border border-gray-100">
+    <div className="w-full max-w-2xl mx-auto bg-card rounded-lg shadow-brand border border-border">
       {/* Header do Chat */}
       <div className="hero-gradient text-white p-4 rounded-t-lg">
         <div className="flex items-center gap-3">
@@ -163,9 +163,9 @@ Quer outra receita ou alguma variação?`;
           <div className="flex justify-start">
             <div className="chat-bot p-3 rounded-lg rounded-bl-sm">
               <div className="flex space-x-1">
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce"></div>
+                <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                <div className="w-2 h-2 bg-muted-foreground rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
               </div>
             </div>
           </div>
@@ -174,7 +174,7 @@ Quer outra receita ou alguma variação?`;
       </div>
 
       {/* Input de Mensagem */}
-      <div className="p-4 border-t border-gray-100">
+      <div className="p-4 border-t border-border">
         <div className="flex gap-2">
           <Input
             value={inputMessage}
