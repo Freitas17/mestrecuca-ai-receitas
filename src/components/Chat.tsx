@@ -47,7 +47,7 @@ const Chat = () => {
     setIsTyping(true);
 
     try {
-      const response = await fetch('http://localhost:5678/webhook/PerguntaReceita', {
+      const response = await fetch('http://localhost:5678/webhook-test/PerguntaReceita', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
