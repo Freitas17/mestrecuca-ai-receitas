@@ -61,8 +61,8 @@ const Chat = () => {
       const data = await response.json();
       console.log('Resposta completa do N8n:', data);
       
-      // Usar apenas a resposta real do webhook, sem fallbacks
-      const botResponse = data.resposta || data.response || data.output || data.message;
+      // Extrair a resposta do webhook N8n
+      const botResponse = data.resposta || data.response || data.output || data.message || 'Desculpe, não consegui gerar uma resposta.';
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -73,51 +73,16 @@ const Chat = () => {
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       console.error('Erro ao enviar para N8n:', error);
-      // Não mostrar mensagem de erro, apenas falhar silenciosamente
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: 'Desculpe, ocorreu um erro ao processar sua mensagem. Tente novamente.',
+        isUser: false,
+        timestamp: new Date(),
+      };
+      setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsTyping(false);
     }
-  };
-
-  const generateBotResponse = (userInput: string): string => {
-    const input = userInput.toLowerCase();
-    
-    if (input.includes('ovo') || input.includes('ovos')) {
-      return '🥚 Ótimo! Ovos são super versáteis. Você tem outros ingredientes como leite, farinha, açúcar ou sal? E que tipo de refeição você gostaria: café da manhã, almoço ou jantar?';
-    }
-    
-    if (input.includes('tomate') || input.includes('cebola') || input.includes('alho')) {
-      return '🍅 Perfeito! Esses são ingredientes básicos excelentes. Você tem proteína como frango, carne ou feijão? E prefere algo rápido (até 30 min) ou pode dedicar mais tempo?';
-    }
-    
-    if (input.includes('arroz') || input.includes('feijão')) {
-      return '🍚 Clássico brasileiro! Que tal incrementar? Você tem temperos, carnes ou legumes? E para quantas pessoas é a refeição?';
-    }
-
-    if (input.includes('rápido') || input.includes('30') || input.includes('minutos')) {
-      return `⚡ Entendi que você quer algo rápido! Com base nos ingredientes que você mencionou, aqui está uma receita perfeita:
-
-**🍳 Omelete Turbinada (15 min)**
-
-**Ingredientes:**
-• 3 ovos
-• 2 colheres de leite
-• 1 tomate picado
-• Sal e pimenta a gosto
-• 1 colher de óleo
-
-**Modo de Preparo:**
-1. Bata os ovos com leite, sal e pimenta
-2. Aqueça o óleo na frigideira
-3. Despeje a mistura e adicione o tomate
-4. Dobre ao meio quando dourar
-
-**💡 Dica do Mestre:** Adicione queijo ralado nos últimos minutos para ficar ainda mais saboroso!
-
-Quer outra receita ou alguma variação?`;
-    }
-    
-    return '🤔 Interessante! Me conte mais detalhes: você tem alguma restrição alimentar? Prefere algo doce ou salgado? E quanto tempo tem disponível para cozinhar?';
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
