@@ -47,7 +47,7 @@ const Chat = () => {
     setIsTyping(true);
 
     try {
-      const response = await fetch('http://localhost:5678/webhook-test/PerguntaReceita', {
+      const response = await fetch('https://webhook.fiqon.app/webhook/a011e1ca-c5cf-4d44-a37e-1f099e0f6040/46f66094-9450-4b5c-ac9c-57360d4df783', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
